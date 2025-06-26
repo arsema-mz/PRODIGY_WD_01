@@ -5,44 +5,128 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
     <header>
-        <div class="logo">
-            <img style="width: 80px;height: 80px;border-radius: 20px;" src="images/logo1.jpg" alt="Logo">
+       <nav class="nav">
+            <div class="logo">
+            <img style="width: 60px;height: 60px;border-radius: 20px;" src="images/logo1.jpg" alt="Logo">
             <h1>Cozy Collections</h1>
-        </div>
-       
-            <div class="nav">
-                <button><a style="color: green;text-decoration: underline;" class="button" href="#">Home</a></button>
-                <button><a class="button" href="#">Clothes</a></button>
-                <button><a class="button" href="#">Accessories</a></button>
-                <button><a class="button" href="#">New Brands</a></button>
             </div>
-            <a id="unique" href="form.html" id="register-btn">Register</a>
+            <ul class="menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="form.html" id="unique">Sign Up</a>
+        </nav>
     </header>
     <main>
-        <section class="hero">
+        <section id="home" class="hero">
             <h2>Stay Fabulous, Stay Cozy!</h2>
             <h3>Welcome to <b style="color:darkgreen">Cozy Collections</b>  Style!</h3>
             <p> Join the Cozy Collections family and unlock exclusive access to our latest arrivals, limited-edition products, and members-only sales. 
                 Refer a friend to Cozy Collections and enjoy special discounts on your next purchase as a token of our appreciation!
-                <b style="color:rgb(5, 70, 5)">Register</b> now to elevate your style with the comfort and elegance that only Cozy Collections can offer!</p>
+                <b style="color:rgb(5, 70, 5)">Sign up</b> now to elevate your style with the comfort and elegance that only Cozy Collections can offer!</p>
 
             <div class="refer">
                 <a class="refer1" href="#">Refer a Friend</a>
                 <a class="refer2" href="#">Member Options</a>
 
             </div>
-            <div class="img">
-                <img style="width:400px; height:600px" src="images/winteroutfit_.jpg" alt="picture">
-                <img style="width:400px; height:600px" src="images/outfit inspiration.jpg" alt="picture">
+            <div class="img-container">
+                <img src="images/winteroutfit_.jpg" alt="Winter Outfit">
+                <img src="images/outfit inspiration.jpg" alt="Outfit Inspiration">
             </div>
            <img src="images/image 1.png" alt="Logo">
+        </section>
 
-        
+        <section id="about" class="about">
+            <div class="about-text">
+                <h2>About Cozy Collections</h2>
+                <p>
+                Cozy Collections is more than fashion — it's a feeling. We design <strong>comfortable, stylish, and empowering outfits</strong> for women of all sizes and personalities. Whether you're lounging, working, or stepping out, our goal is to help you feel <strong>confident, cozy, and effortlessly chic</strong> every day.
+                </p>
+                <p>
+                Our mission is to blend comfort and class, giving every woman access to <strong>high-quality essentials</strong> that fit just right — because great style starts with feeling good.
+                </p>
+            </div>
+
+            <div class="about-image">
+                <img src="images/fashion.jpeg" alt="Cozy Collections Brand" />
+                <img src="images/cozy.jpeg" alt="Cozy Collections Brand" />
+                <img src="images/cloth.jpeg" alt="Cozy Collections Brand" />
+            </div>
+        </section>
+       <section id="services" class="services">
+            <h2>Our Offerings</h2>
+
+            <div class="service-block">
+                <h3><i class="fas fa-store"></i> Products We Offer</h3>
+                <ul class="service-list">
+                <li><i class="fas fa-spray-can-sparkles"></i> Perfumes</li>
+                <li><i class="fas fa-clock"></i> Watches</li>
+                <li><i class="fas fa-glasses"></i> Glasses</li>
+                <li><i class="fas fa-handbag"></i> Bags</li>
+                <li><i class="fas fa-shirt"></i> Clothes</li>
+                </ul>
+            </div>
+
+            <div class="service-block">
+                <h3><i class="fas fa-concierge-bell"></i> Our Services</h3>
+                <ul class="service-list">
+                <li><i class="fas fa-truck-fast"></i> Fast Home Delivery</li>
+                <li><i class="fas fa-tags"></i> Special Discount Offers</li>
+                <li><i class="fas fa-clock-rotate-left"></i> Happy Hour Sales</li>
+                <li><i class="fas fa-user-friends"></i> Referral Rewards</li>
+                <li><i class="fas fa-gift"></i> Gift Packaging</li>
+                </ul>
+            </div>
+        </section>
+        <section id="contact" class="contact">
+            <h2>Contact Us</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                <p><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</p>
+                <p><i class="fas fa-phone-alt"></i> +251 912 345 678</p>
+                <p><i class="fas fa-envelope"></i> support@cozycollections.com</p>
+                <div class="socials">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+                </div>
+
+                <!-- Optional: Contact form (commented out for now)
+                <div class="contact-form">
+                <form>
+                    <input type="text" placeholder="Your Name" required />
+                    <input type="email" placeholder="Your Email" required />
+                    <textarea rows="4" placeholder="Your Message"></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+                </div>
+                -->
+            </div>
+        </section>
+
+
+
+
+
+
+        <section class="cta">
+            <h2>Don't Miss Out!</h2>
+            <p>Get access to seasonal sales, early drops & style tips. Sign up today!</p>
+            <a href="#signup" class="cta-btn">Join the Cozy Club</a>
         </section>
     </main>
-   
+    <footer>
+        <p>&copy; 2025 Cozy Collections. All rights reserved.</p>
+    </footer>
+
+   <script src="script.js"></script>
 </body>
 </html>
