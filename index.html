@@ -14,7 +14,12 @@
             <img style="width: 60px;height: 60px;border-radius: 20px;" src="images/logo1.jpg" alt="Logo">
             <h1>Cozy Collections</h1>
             </div>
-            <ul class="menu">
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="menu" id="nav-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
@@ -98,24 +103,8 @@
                     <a href="#"><i class="fab fa-tiktok"></i></a>
                 </div>
                 </div>
-
-                <!-- Optional: Contact form (commented out for now)
-                <div class="contact-form">
-                <form>
-                    <input type="text" placeholder="Your Name" required />
-                    <input type="email" placeholder="Your Email" required />
-                    <textarea rows="4" placeholder="Your Message"></textarea>
-                    <button type="submit">Send Message</button>
-                </form>
-                </div>
-                -->
             </div>
         </section>
-
-
-
-
-
 
         <section class="cta">
             <h2>Don't Miss Out!</h2>
@@ -126,6 +115,15 @@
     <footer>
         <p>&copy; 2025 Cozy Collections. All rights reserved.</p>
     </footer>
+    <div id="referral-popup" class="popup">
+        <div class="popup-content">
+            <span id="close-popup">&times;</span>
+            <h3>Refer a Friend 👭</h3>
+            <p>Share this link with your friends and earn rewards:</p>
+            <input type="text" value="https://cozycollections.com/referral" id="referral-link" readonly>
+            <button id="copy-link">Copy Link</button>
+        </div>
+    </div>
 
    <script src="script.js"></script>
 </body>

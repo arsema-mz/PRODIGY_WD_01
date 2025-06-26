@@ -357,14 +357,144 @@ footer {
     padding: 20px;
     background-color: #f8f9fa;
 }
+.popup {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.popup-content {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.popup-content h3 {
+  margin-bottom: 15px;
+  color: darkgreen;
+}
+
+.popup-content input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+#copy-link {
+  background-color: darkgreen;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#copy-link:hover {
+  background-color: #063406;
+}
+
+#close-popup {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
+/* Hamburger base style */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: darkgreen;
+  border-radius: 5px;
+}
+.img {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.img img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+
+
 
 /* Media Queries for Responsive Design */
 @media (max-width: 768px) {
-    .nav {
-        flex-direction: column; /* Stack items vertically on smaller screens */
-        padding: 10px; /* Reduce padding */
-    }
+    header {
+    padding: 10px 15px;
+  }
 
+  .nav {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow menu to move to next line */
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .menu {
+    width: 100%;
+    flex-direction: column;
+    display: none;
+    margin-top: 10px;
+    padding-left: 10px;
+  }
+
+  .menu.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+  }
+
+  .hamburger span {
+    width: 22px;
+    height: 3px;
+    background-color: darkgreen;
+    border-radius: 3px;
+  }
+
+  #unique {
+    font-size: 0.85rem;
+    padding: 8px 12px;
+    margin-left: 10px;
+  }
     .refer {
         flex-direction: column; /* Stack items vertically on smaller screens */
     }
@@ -381,26 +511,25 @@ footer {
     h2, h3, p {
         font-size: 0.9rem; /* Adjust font size */
     }
-    .menu {
-        flex-direction: column;
-        width: 100%;
-        align-items: center;
-    }
+    
 
     .menu li {
         margin: 10px 0;
     }
 
-    #unique {
-        margin-top: 10px;
-    }
+   
+    section {
+    scroll-margin-top: 200px; /* Increased for mobile header height */
+  }
+  #about, #services, #contact {
+  padding-top: 40px;
+}
 }
 
 /* Media Queries for Extra Small Screens */
 @media (max-width: 500px) {
     header {
-        flex-direction: column; /* Stack items vertically */
-        align-items: flex-start; /* Align items to the start */
+        flex-direction: row; /* Stack items vertically */
         padding: 10px; /* Reduce padding */
     }
 
@@ -449,10 +578,33 @@ footer {
 
 /* Media Queries for Very Small Screens */
 @media (max-width: 400px) {
+    body {
+    padding: 0 10px;
+    font-size: 14px; /* slightly smaller base font */
+    overflow-x: hidden; /* prevent horizontal scrolling */
+  }
     header {
         padding: 5px; /* Further reduce padding */
     }
+    .img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* spacing between images */
+    width: 100%;
+  }
 
+  .img img {
+    width: 90%;          /* shrink image width */
+    max-width: 280px;    /* cap it for tiny screens */
+    height: auto;        /* maintain aspect ratio */
+    border-radius: 10px; /* optional: rounded corners for polish */
+    object-fit: cover;
+  }
+
+  .hero {
+    padding: 30px 10px;
+  }
     .nav {
         padding: 0; /* Remove padding */
     }
@@ -474,6 +626,65 @@ footer {
         width: 95%; /* Adjust form width */
         padding: 10px; /* Reduce padding */
     }
+     /* === About Section === */
+  .about {
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 10px;
+    text-align: center;
+  }
+
+  .about-text {
+    width: 100%;
+  }
+
+  .about-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  .about-image img {
+    width: 90%;
+    max-width: 280px;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  /* === Services Section === */
+  .services {
+    padding: 30px 10px;
+    text-align: center;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr; /* stack items */
+    gap: 15px;
+  }
+
+  .service-item {
+    padding: 15px;
+  }
+
+  /* === Contact Section === */
+  .contact {
+    padding: 30px 10px;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .contact-info, .contact-social {
+    width: 100%;
+  }
+
+  .contact-social a {
+    font-size: 1.3rem;
+    margin: 0 10px;
+  }
 }
 
 
